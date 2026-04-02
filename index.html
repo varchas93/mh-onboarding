@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANN+HUMMEL — Employee Joining Kit</title>
+<link rel="stylesheet" href="src/components/styles.css">
+</head>
+<body>
+<div class="mh-app" id="mh-app"></div>
+<!-- Load as ES modules -->
+<script type="module" src="src/index.js"></script>
+<!--
+   ══ DEMO TIPS ══════════════════════════════════════════════
+   1. OPEN NORMALLY (fresh form):
+      Just open index.html in a browser.
+   2. TEST SF AUTO-FILL (pre-filled from SuccessFactors):
+      Open: index.html?empid=DEMO&token=test
+      → Joining Details, Personal Details auto-populate with
+        Priya Venkatesh's mock SF data. Fields show green.
+   3. SPFx INTEGRATION (when you get there):
+      - Copy /src into your SPFx project src/ folder
+      - In JoiningFormWebPart.ts render():
+          import { initJoiningForm } from './components/index.js';
+          this.domElement.innerHTML = '<div id="mh-app"></div>';
+          initJoiningForm('#mh-app');
+      - Replace handleSubmit() with SP REST API writes
+      - The context object (this.context) gives you siteUrl
+   4. FILE STRUCTURE:
+      /src
+        /components
+          styles.css         ← shared design system
+          JoiningDetails.js  ← Section 1: KYC fields 1a–1g
+          PersonalDetails.js ← Section 2: KYC fields 2a–2i
+          FamilyDetails.js   ← Section 3: Family + Emergency + Medical
+          Academic.js        ← Section 4: Qualifications + Publications
+          WorkHistory.js     ← Section 5: Work history + Form 11 prev PF
+          Nominees.js        ← Section 6: KYC Sec 8 + Form 2 + Form F
+          Consents.js        ← Section 7: Form 11 KYC + all 5 consents
+        index.js             ← App orchestrator (state + navigation)
+      index.html             ← Standalone demo
+ ══════════════════════════════════════════════════════════
+ -->
+</body>
+</html>
